@@ -12,7 +12,8 @@ try {
 	const result = await response.json();
 	console.log(result);
 
-    const tracksList = document.getElementById('info');
+    const soundcloudURL = document.getElementById('playlistinput');
+	const button = document.getElementById('search-button');
 } catch (error) {
 	console.error(error);
 }
