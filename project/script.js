@@ -14,6 +14,10 @@ try {
 
     const soundcloudURL = document.getElementById('playlistinput');
 	const button = document.getElementById('search-button');
+
+	button.addEventListener('click'){
+		
+	}
 } catch (error) {
 	console.error(error);
 }
