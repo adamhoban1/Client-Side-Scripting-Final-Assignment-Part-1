@@ -1,4 +1,5 @@
 const url = 'https://soundcloud-scraper.p.rapidapi.com/v1/user/tracks?user=https%3A%2F%2Fsoundcloud.com%2Fedsheeran';
+const apiKey = "my key goes hger"
 const options = {
 	method: 'GET',
 	headers: {
