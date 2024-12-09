@@ -12,6 +12,7 @@ async function searchmusic(userURL) {
                 'X-RapidAPI-Host': 'soundcloud-scraper.p.rapidapi.com'
             }
         });
+		console.log(response)
 
 	}
 	catch (error) {
