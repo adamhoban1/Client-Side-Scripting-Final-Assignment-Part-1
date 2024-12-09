@@ -32,7 +32,7 @@ function displayplaylists(playlists) {
         const imageUrl = item.artworkUrl?.url || 'https://via.placeholder.com/450x450?text=No+Image';
 
         const dataContainer = document.createElement('div');
-        dataContainer.style.marginBottom = '20px';
+		dataContainer.classList.add('card'); 
         dataContainer.innerHTML = `
             <h2><a href="${item.permalinkUrl}">${item.title}</a></h2>
             <img src="${imageUrl}" alt="Playlist Artwork" style="width: 100%; height: auto; border-radius: 10px;" />
