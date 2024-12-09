@@ -1,7 +1,6 @@
 const API_URL = 'https://soundcloud-scraper.p.rapidapi.com/v1/user/albums?user=';
 const API_KEY = 'debd88bf4amshf2244f6244ae295p1287a1jsn7557427db93c';
 
-
 async function searchmusic(userURL) {
 	try{
 		const response = await fetch(`${API_URL}${encodeURIComponent(userURL)}`, {
@@ -27,11 +26,11 @@ async function searchmusic(userURL) {
 	}
 }
 
-function displayplaylists(albums) {
+function displayplaylists(playlists) {
     const displayInfo = document.getElementById('info');
-    albums.forEach(items => {
+    playlists.forEach(items => {
         const imageUrl = items.artworkUrl?.url || 'https://via.placeholder.com/300x450?text=No+Image';
-		
+
         const dataContainer = document.createElement('div');
         dataContainer.style.marginBottom = '20px';
         dataContainer.innerHTML = `
