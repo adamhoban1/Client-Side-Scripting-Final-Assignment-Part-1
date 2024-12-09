@@ -18,13 +18,30 @@ async function searchmusic(userURL) {
 
         const data = await response.json();
         //console.log(data);//data
-		//displayMovies(data.playlists);
-		console.log(data.playlists);
+		displayplaylists(data.playlists);
+		console.log(data.playlists.items);
 	}
 	catch (error) {
         const Info = document.getElementById('info');
         Info.innerHTML = `<p>Error: ${error.message}</p>`;
 	}
+}
+
+function displayplaylists(albums) {
+    const displayInfo = document.getElementById('info');
+    albums.forEach(items => {
+        const imageUrl = items.artworkUrl?.url || 'https://via.placeholder.com/300x450?text=No+Image';
+		
+        const dataContainer = document.createElement('div');
+        dataContainer.style.marginBottom = '20px';
+        dataContainer.innerHTML = `
+            <h2>${items.title.text}</h2>
+            <img src="${imageUrl}" alt="${items.permalinkUrl.text}" style="max-width: 100%; height: auto; border-radius: 10px;" />
+            <p><strong>Release Year:</strong> ${items.createdAt?.year || 'N/A'}</p>
+            <p><strong>Type:</strong> ${items.description?.text || 'N/A'}</p>
+        `;
+        displayInfo.appendChild(dataContainer);
+    });
 }
 
 (function (){
