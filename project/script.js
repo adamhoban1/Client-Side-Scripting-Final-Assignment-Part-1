@@ -11,22 +11,20 @@ async function searchmusic(userURL) {
                 'X-RapidAPI-Host': 'soundcloud-scraper.p.rapidapi.com'
             }
         });
-		console.log(response)
+		//console.log(response)
 		if (!response.ok) {
             throw new Error(`Failed to fetch movie data: ${response.status}`);
         }
 
         const data = await response.json();
-        console.log(data);//data
+        //console.log(data);//data
+		//displayMovies(data.playlists);
+		console.log(data.playlists);
 	}
 	catch (error) {
         const Info = document.getElementById('info');
         Info.innerHTML = `<p>Error: ${error.message}</p>`;
 	}
-
-	
-	
-
 }
 
 (function (){
