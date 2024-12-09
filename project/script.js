@@ -1,5 +1,5 @@
 const API_URL = 'https://soundcloud-scraper.p.rapidapi.com/v1/user/albums?user=';
-const API_KEY = 'debd88bf4amshf2244f6244ae295p1287a1jsn7557427db93c';
+const API_KEY = '1704f3200cmshf9aee89de49ac2bp1c096cjsndfc76f7626b3';
 
 async function searchmusic(userURL) {
 	try{
@@ -29,15 +29,15 @@ async function searchmusic(userURL) {
 function displayplaylists(playlists) {
     const displayInfo = document.getElementById('info');
     playlists.items.forEach(item => {
-        const imageUrl = item.artworkUrl?.url || 'https://via.placeholder.com/300x450?text=No+Image';
+        const imageUrl = item.artworkUrl?.url || 'https://via.placeholder.com/450x450?text=No+Image';
 
         const dataContainer = document.createElement('div');
         dataContainer.style.marginBottom = '20px';
         dataContainer.innerHTML = `
-            <h2>${item.title.text}</h2>
-            <img src="${imageUrl}" alt="${item.permalinkUrl.text}" style="max-width: 100%; height: auto; border-radius: 10px;" />
-            <p><strong>Release Year:</strong> ${item.createdAt?.year || 'N/A'}</p>
-            <p><strong>Type:</strong> ${item.description?.text || 'N/A'}</p>
+            <h2><a href="${item.permalinkUrl}">${item.title}</a></h2>
+            <img src="${imageUrl}" alt="Playlist Artwork" style="width: 100%; height: auto; border-radius: 10px;" />
+			<p><strong>discription:</strong> ${item.description || 'N/A'}</p>
+            <p><strong>Genre:</strong> ${item.genre || 'N/A'}</p>
         `;
         displayInfo.appendChild(dataContainer);
     });
