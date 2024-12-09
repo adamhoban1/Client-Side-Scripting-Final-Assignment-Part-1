@@ -1,4 +1,5 @@
 const API_URL = 'https://soundcloud-scraper.p.rapidapi.com/v1/user/albums?user=';
+const API_URL2 = 'https://soundcloud-scraper.p.rapidapi.com/v1/user/toptracks?user=';
 const API_KEY = '1704f3200cmshf9aee89de49ac2bp1c096cjsndfc76f7626b3';
 
 async function searchmusic(userURL) {
