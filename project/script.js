@@ -1,4 +1,4 @@
-const API_URL = 'https://soundcloud-scraper.p.rapidapi.com/v1/user/tracks?user=';
+const API_URL = 'https://soundcloud-scraper.p.rapidapi.com/v1/user/albums?user=';
 const API_KEY = 'debd88bf4amshf2244f6244ae295p1287a1jsn7557427db93c';
 
 
@@ -12,7 +12,12 @@ async function searchmusic(userURL) {
             }
         });
 		console.log(response)
+		if (!response.ok) {
+            throw new Error(`Failed to fetch movie data: ${response.status}`);
+        }
 
+        const data = await response.json();
+        console.log(data);
 	}
 	catch (error) {
         const Info = document.getElementById('info');
