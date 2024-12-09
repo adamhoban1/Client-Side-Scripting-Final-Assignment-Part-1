@@ -17,7 +17,7 @@ async function searchmusic(userURL) {
         }
 
         const data = await response.json();
-        console.log(data);
+        console.log(data);//data
 	}
 	catch (error) {
         const Info = document.getElementById('info');
