@@ -36,7 +36,7 @@ async function searchmusic(userURL) {
 		searchmusic(userURL);
     });
 
-})
+})();
 
    
 
