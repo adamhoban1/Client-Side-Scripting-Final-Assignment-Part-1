@@ -4,6 +4,11 @@ const searchButton = document.getElementById('search-button');
 const soundCloudURL = document.getElementById('playlistinput');
 
 async function searchmusic() {
+	
+
+}
+
+(function (){
 	searchButton.addEventListener('click', () => {
 		const userURL = soundCloudURL.value.trim();
 		if (!soundCloudURL) {
@@ -11,9 +16,9 @@ async function searchmusic() {
 			return;
         }
 		newyoke(userURL);
-	});
+    });
 
-}
+})
 
    
 
